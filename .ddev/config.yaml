@@ -1,0 +1,9 @@
+type: php
+docroot: ""
+php_version: "8.3"
+webserver_type: generic
+xdebug_enabled: false
+composer_version: "2"
+database:
+  type: mysql
+  version: "8.0"

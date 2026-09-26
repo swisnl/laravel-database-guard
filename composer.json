@@ -1,0 +1,64 @@
+{
+    "name": "swisnl/laravel-database-guard",
+    "type": "library",
+    "description": "Database guard for Laravel",
+    "keywords": [
+        "swisnl",
+        "laravel",
+        "database",
+        "guard"
+    ],
+    "homepage": "https://github.com/swisnl/laravel-database-guard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cees Geene",
+            "email": "cees@swis.nl",
+            "homepage": "https://www.swis.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/database": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.32",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpunit/phpunit": "^12.0",
+        "rector/rector": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swis\\Laravel\\DatabaseGuard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swis\\Laravel\\DatabaseGuard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse",
+        "rector": "rector process",
+        "lint": "pint --test",
+        "format": "pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Swis\\Laravel\\DatabaseGuard\\DatabaseGuardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
