@@ -1,0 +1,2 @@
+providers:
+  - Swis\Laravel\DatabaseGuard\DatabaseGuardServiceProvider

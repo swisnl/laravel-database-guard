@@ -7,8 +7,8 @@ namespace Swis\Laravel\DatabaseGuard\Tests\Feature;
 use Illuminate\Support\ServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
-use Swis\Laravel\DatabaseGuard\DatabaseGuard;
 use Swis\Laravel\DatabaseGuard\DatabaseGuardServiceProvider;
+use Swis\Laravel\DatabaseGuard\Migrations\GuardedMigrator;
 
 #[CoversClass(DatabaseGuardServiceProvider::class)]
 final class DatabaseGuardServiceProviderTest extends TestCase
@@ -20,13 +20,12 @@ final class DatabaseGuardServiceProviderTest extends TestCase
     }
 
     #[Test]
-    public function it_registers_the_guard_as_singleton(): void
+    public function it_replaces_the_migrator(): void
     {
         $app = $this->app;
         $this->assertNotNull($app);
 
-        $this->assertInstanceOf(DatabaseGuard::class, $app->make(DatabaseGuard::class));
-        $this->assertSame($app->make(DatabaseGuard::class), $app->make(DatabaseGuard::class));
+        $this->assertInstanceOf(GuardedMigrator::class, $app->make('migrator'));
     }
 
     #[Test]
