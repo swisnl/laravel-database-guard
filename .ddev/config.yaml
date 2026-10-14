@@ -7,3 +7,8 @@ composer_version: "2"
 database:
   type: mysql
   version: "8.0"
+web_environment:
+  - DB_HOST=db
+  - DB_USERNAME=db
+  - DB_PASSWORD=db
+  - DB_DATABASE=db
